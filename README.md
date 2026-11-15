@@ -49,7 +49,8 @@ write-tree`, not asserted.
 
 | PR | PR claims | scale 1 | scale 2 | scale 3 | scale 4 | same-tree median | worst scale | verdict |
 |---|---|---|---|---|---|---|---|---|
-| [`attrs#1660`](https://github.com/python-attrs/attrs/pull/1660) | **1.98x** (1.96–2.06) | small 0.985x | medium 1.023x | large 0.965x | — | **0.985x** | 0.965x | **RETRACT** |
+| [`attrs#1660`](https://github.com/python-attrs/attrs/pull/1660) — nested corpus | **1.98x** (1.96–2.06) | small 0.985x | medium 1.023x | large 0.965x | — | **0.985x** | 0.965x | **RETRACT** |
+| [`attrs#1660`](https://github.com/python-attrs/attrs/pull/1660) — flat 20-field corpus | same claim | small 0.988x | medium 0.985x | large 0.982x | — | **0.985x** | 0.982x | **RETRACT** |
 | [`croniter#298`](https://github.com/pallets-eco/croniter/pull/298) | **2.29x** (1.57–3.26) | small 1.988x | medium 2.243x | large 2.368x | dst 1.897x | **2.116x** | 1.897x | **KEEP** |
 | [`jsonpatch#274`](https://github.com/stefankoegl/python-json-patch/pull/274) | **1.33x** (1.02–1.40) | small 1.028x | medium 1.014x | large 0.997x | near-identical 0.997x | **1.006x** | 0.997x | **RETRACT** |
 
@@ -63,15 +64,20 @@ What this means, stated carefully:
   byte-identical output, 267 upstream tests green on both trees, 1.90–2.37x on
   four workloads. This PR's headline claim survives an independent same-tree
   re-measurement.
-* **attrs#1660 does not reproduce on the declared corpus.** The PR body
+* **attrs#1660 does not reproduce on the declared corpora.** The PR body
   advertises 1.98x from "8 live PyPI JSON documents (12,831,175 bytes) loaded
   into nested attrs models". Those documents are not redistributable here, so
-  this recheck uses a deterministic reconstruction of that shape
-  (`info`/`releases`/`urls`/`meta`, 599–9,601 model objects). On that corpus the
-  same-tree speedup is 0.96–1.02x: the patched tree is *not* faster. This is a
-  non-reproduction on our declared workload, not a proof about the PR author's
-  private corpus; but it does mean the advertised number cannot be used as the
-  PR's justification, and the retract criterion fires.
+  this recheck uses two deterministic reconstructions: the same document shape
+  (`info`/`releases`/`urls`/`meta`, 599–9,601 model objects) and a second,
+  deliberately PR-favourable shape — 2,000 / 8,000 / 32,000 flat attrs objects
+  with 20 scalar fields each, where the removed per-node `fields()` call and
+  keyword plumbing should matter most. Both give the same answer:
+  0.96–1.02x and 0.988/0.985/0.982x respectively, i.e. the patched tree is
+  **not** faster (the flat corpus is quiet: RSD ≤ 2.5%, so gate T6 passes and
+  the retract rests on T4/T5 alone, not on noise). This is a non-reproduction
+  on our declared workloads, not a proof about the PR author's private corpus;
+  but it does mean the advertised number cannot be used as the PR's
+  justification, and the retract criterion fires.
 * **jsonpatch#274 also retracts.** The PR's own honest negative (1.02x on
   near-identical inputs) turns out to be the *general* case on our service-model
   corpus: 0.997–1.028x across four scales, median 1.006x. The fast path is
@@ -90,8 +96,8 @@ What this means, stated carefully:
 | T3 differential (sha256-unique, byte-identical) | ✅ 2000 unique / 0 mismatch | ✅ 2000 unique / 0 mismatch | ✅ 1823 unique / 0 mismatch, reapply 2000/2000 (`==`) |
 | T4 same-tree median ≥ 1.30x | ❌ 0.985x | ✅ 2.116x | ❌ 1.006x |
 | T5 worst scale ≥ 1.00x | ❌ 0.965x | ✅ 1.897x | ❌ 0.997x |
-| T6 noise (RSD ≤ 10%) | ❌ large, medium | ✅ | ✅ |
-| **verdict** | **RETRACT** | **KEEP** | **RETRACT** |
+| T6 noise (RSD ≤ 10%) | ❌ large, medium (nested) / ✅ (flat) | ✅ | ✅ |
+| **verdict** | **RETRACT** (both corpora) | **KEEP** | **RETRACT** |
 
 Differential coverage is content-addressed on the *input*: `unique_inputs` is
 the number of distinct sha256 digests of generated inputs, so repeating one
