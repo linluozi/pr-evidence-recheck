@@ -1,0 +1,33 @@
+{
+  "name": "attrs-1660",
+  "upstream": "python-attrs/attrs",
+  "pr": 1660,
+  "pr_url": "https://github.com/python-attrs/attrs/pull/1660",
+  "claim": {
+    "headline_speedup": 1.98,
+    "reported_range": "1.96x-2.06x",
+    "corpus": "8 live PyPI JSON documents (12,831,175 bytes) loaded into nested attrs models; up to 18,709 objects per asdict()",
+    "upstream_tests": "1400 passed, 11 skipped, 1 xfailed"
+  },
+  "git_url": "git@github-linluozi:python-attrs/attrs.git",
+  "base_sha": "2a1fb86d44816afcc60e86d57956ce3604820326",
+  "head_sha": "0ca3f2db2864fb174349b1b4740487df31c5aaae",
+  "head_tree_sha": "1655912bd07591145f2bf920b231d7041b5df271",
+  "patch": "patches/attrs-1660.diff",
+  "patch_sha256": "10185042f264f14c70e27bd3a9232e0ac81bf6cd4e0758900c0a5a874e369547",
+  "pythonpath_rel": "src",
+  "workload": "workloads/wl_attrs.py",
+  "scales": ["small", "medium", "large"],
+  "warmups": 3,
+  "samples": 5,
+  "ci_iterations": 2000,
+  "seed": 20261116,
+  "diff_cases": 2000,
+  "diff_min_unique": 1000,
+  "keep_threshold": 1.3,
+  "worst_case_floor": 1.0,
+  "upstream_tests": {
+    "command": ["-m", "pytest", "-q", "-p", "no:cacheprovider"],
+    "cwd_rel": "."
+  }
+}

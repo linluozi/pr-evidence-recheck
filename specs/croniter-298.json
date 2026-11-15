@@ -1,0 +1,33 @@
+{
+  "name": "croniter-298",
+  "upstream": "pallets-eco/croniter",
+  "pr": 298,
+  "pr_url": "https://github.com/pallets-eco/croniter/pull/298",
+  "claim": {
+    "headline_speedup": 2.29,
+    "reported_range": "1.57x-3.26x",
+    "corpus": "croniter_range over real crontab expressions; weekday #/L paths; DST transitions",
+    "upstream_tests": "267 passed, 890 subtests passed"
+  },
+  "git_url": "git@github-linluozi:pallets-eco/croniter.git",
+  "base_sha": "ddb3495cf4eb1e7b0cc33b6baa0e9c4f36fb0c60",
+  "head_sha": "629dca056b8555d87ee2d2294e15ba1179da0ae7",
+  "head_tree_sha": "7ae0ac41807aade7f50727694d891cd425035c4f",
+  "patch": "patches/croniter-298.diff",
+  "patch_sha256": "cff29e9efca15d76c66475920a1da143d6411045c4eec946cf0d48370602cb7c",
+  "pythonpath_rel": "src",
+  "workload": "workloads/wl_croniter.py",
+  "scales": ["small", "medium", "large", "dst"],
+  "warmups": 3,
+  "samples": 5,
+  "ci_iterations": 2000,
+  "seed": 20261116,
+  "diff_cases": 2000,
+  "diff_min_unique": 1000,
+  "keep_threshold": 1.3,
+  "worst_case_floor": 1.0,
+  "upstream_tests": {
+    "command": ["-m", "pytest", "-q", "-p", "no:cacheprovider"],
+    "cwd_rel": "."
+  }
+}

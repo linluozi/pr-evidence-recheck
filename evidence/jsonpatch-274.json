@@ -1,0 +1,370 @@
+{
+  "certificate_sha256": "6a4453c0d9b0518877d1e41f34aac0b8b5217be32912e488c880ae48bc7e30ef",
+  "differential": {
+    "mismatches": 0,
+    "pairs_only_in_baseline": 0,
+    "pairs_only_in_patched": 0,
+    "reapply_canonical": 1996,
+    "reapply_equal": 2000,
+    "unique_inputs_baseline": 1823,
+    "unique_inputs_common": 1823,
+    "unique_inputs_patched": 1823
+  },
+  "environment": {
+    "cpu": "AMD EPYC 7K62 48-Core Processor",
+    "mem_total_kb": 3812564,
+    "node": "v24.19.0",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "python_executable": "/tmp/recheck/venv/bin/python"
+  },
+  "generated_at": "2026-11-15T22:16:48+00:00",
+  "patch_sha256": "78917205b03eb76db59dd162a20431d2f23cabbb06d17cad9b3e9a8f812123f8",
+  "reps": 3,
+  "scales": {
+    "large": {
+      "baseline_ns": [
+        12250889,
+        12037497,
+        12012671,
+        12136184,
+        12609744,
+        11823677,
+        11872597,
+        11924255,
+        11923063,
+        12498475,
+        11855367,
+        11877347,
+        11940577,
+        11947569,
+        12525926
+      ],
+      "candidate_ns": [
+        11948571,
+        11987615,
+        12134430,
+        11570079,
+        12819899,
+        11646433,
+        11693642,
+        11682912,
+        11779223,
+        12440966,
+        12009877,
+        12025987,
+        11570309,
+        12136615,
+        12637827
+      ],
+      "summary": {
+        "baseline_median_ns": 11947569.0,
+        "baseline_p25_ns": 11900205.0,
+        "baseline_p75_ns": 12193536.5,
+        "baseline_rsd": 0.02189000750669924,
+        "candidate_median_ns": 11987615.0,
+        "candidate_p25_ns": 11688277.0,
+        "candidate_p75_ns": 12135522.5,
+        "candidate_rsd": 0.031880832322146384,
+        "n": [
+          15,
+          15
+        ],
+        "speedup": 0.9966593855408269,
+        "speedup_ci95": [
+          0.9826794501266232,
+          1.027305848901352
+        ]
+      }
+    },
+    "medium": {
+      "baseline_ns": [
+        2125315,
+        2120607,
+        2113152,
+        2162876,
+        2127149,
+        2150101,
+        2134802,
+        2131878,
+        2164489,
+        2124925,
+        2215976,
+        2136907,
+        2159791,
+        2150462,
+        2253025
+      ],
+      "candidate_ns": [
+        2086403,
+        2625817,
+        2074239,
+        2091281,
+        2047298,
+        2119865,
+        2134974,
+        2097803,
+        2108745,
+        2107211,
+        2067566,
+        2174408,
+        2065803,
+        2107132,
+        2124413
+      ],
+      "summary": {
+        "baseline_median_ns": 2136907.0,
+        "baseline_p25_ns": 2126232.0,
+        "baseline_p75_ns": 2161333.5,
+        "baseline_rsd": 0.017621081226840033,
+        "candidate_median_ns": 2107132.0,
+        "candidate_p25_ns": 2080321.0,
+        "candidate_p75_ns": 2122139.0,
+        "candidate_rsd": 0.06519874827939201,
+        "n": [
+          15,
+          15
+        ],
+        "speedup": 1.014130581282995,
+        "speedup_ci95": [
+          1.0063453165391243,
+          1.0327598251980485
+        ]
+      }
+    },
+    "near_identical": {
+      "baseline_ns": [
+        7259426,
+        7274634,
+        7305374,
+        7323046,
+        7272201,
+        7239879,
+        7169818,
+        7204905,
+        7203962,
+        7219661,
+        7313749,
+        7179546,
+        7199223,
+        7180708,
+        7210644
+      ],
+      "candidate_ns": [
+        7296766,
+        7220975,
+        7242254,
+        7270456,
+        7212619,
+        7252304,
+        7241283,
+        7243296,
+        7259026,
+        7291817,
+        7237555,
+        7241222,
+        7260760,
+        7204113,
+        7218269
+      ],
+      "summary": {
+        "baseline_median_ns": 7219661.0,
+        "baseline_p25_ns": 7201592.5,
+        "baseline_p75_ns": 7273417.5,
+        "baseline_rsd": 0.00707104791121951,
+        "candidate_median_ns": 7242254.0,
+        "candidate_p25_ns": 7229265.0,
+        "candidate_p75_ns": 7259893.0,
+        "candidate_rsd": 0.003707264838547025,
+        "n": [
+          15,
+          15
+        ],
+        "speedup": 0.9968803911047582,
+        "speedup_ci95": [
+          0.9926808087471237,
+          1.0044709837572667
+        ]
+      }
+    },
+    "small": {
+      "baseline_ns": [
+        778184,
+        782310,
+        802800,
+        773353,
+        844967,
+        793101,
+        779336,
+        778994,
+        764768,
+        830211,
+        824670,
+        771580,
+        791979,
+        766140,
+        847313
+      ],
+      "candidate_ns": [
+        761902,
+        757233,
+        758516,
+        770378,
+        830351,
+        755801,
+        741485,
+        741534,
+        760871,
+        823738,
+        767714,
+        767061,
+        756012,
+        759818,
+        861199
+      ],
+      "summary": {
+        "baseline_median_ns": 782310.0,
+        "baseline_p25_ns": 775768.5,
+        "baseline_p75_ns": 813735.0,
+        "baseline_rsd": 0.03546015757246867,
+        "candidate_median_ns": 760871.0,
+        "candidate_p25_ns": 756622.5,
+        "candidate_p75_ns": 769046.0,
+        "candidate_rsd": 0.04521831002708408,
+        "n": [
+          15,
+          15
+        ],
+        "speedup": 1.028176918294954,
+        "speedup_ci95": [
+          1.0140746591735,
+          1.0751035445681634
+        ]
+      }
+    }
+  },
+  "spec": {
+    "base_sha": "cc1229ae0892bdad91b2b81403ebbf2529eec6db",
+    "ci_iterations": 2000,
+    "claim": {
+      "corpus": "10 real Botocore service-model files (8.43 MB); ec2 model pair 891 KB -> 3.03 MB; 5770 operations",
+      "declared_negative": "two nearly identical 3 MB models: 1.02x",
+      "headline_speedup": 1.33,
+      "reported_range": "1.02x-1.40x",
+      "upstream_tests": "346 passed, 448 subtests passed"
+    },
+    "diff_cases": 2000,
+    "diff_min_unique": 1000,
+    "git_url": "git@github-linluozi:stefankoegl/python-json-patch.git",
+    "head_sha": "b1f84c937fd6d783e53b7977edd4fcdd347e1e7c",
+    "head_tree_sha": "9b281368ce95c1c92698694f02bd794a38dc52e0",
+    "keep_threshold": 1.3,
+    "name": "jsonpatch-274",
+    "patch": "patches/jsonpatch-274.diff",
+    "patch_sha256": "78917205b03eb76db59dd162a20431d2f23cabbb06d17cad9b3e9a8f812123f8",
+    "pr": 274,
+    "pr_url": "https://github.com/stefankoegl/python-json-patch/pull/274",
+    "pythonpath_rel": ".",
+    "samples": 5,
+    "scales": [
+      "small",
+      "medium",
+      "large",
+      "near_identical"
+    ],
+    "seed": 20261116,
+    "upstream": "stefankoegl/python-json-patch",
+    "upstream_tests": {
+      "command": [
+        "-m",
+        "pytest",
+        "tests.py",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd_rel": "."
+    },
+    "warmups": 3,
+    "workload": "workloads/wl_jsonpatch.py",
+    "worst_case_floor": 1.0
+  },
+  "tool": "pr-evidence-recheck",
+  "tool_version": "1.0.0",
+  "trees": {
+    "base_sha": "cc1229ae0892bdad91b2b81403ebbf2529eec6db",
+    "diff_stat": "jsonpatch.py | 45 +++++++++++++++++++++++++++++++++++++++++++--\n 1 file changed, 43 insertions(+), 2 deletions(-)",
+    "expected_head_tree_sha": "9b281368ce95c1c92698694f02bd794a38dc52e0",
+    "patched_tree_sha": "9b281368ce95c1c92698694f02bd794a38dc52e0",
+    "same_tree": true
+  },
+  "upstream_tests": {
+    "baseline": {
+      "command": "/tmp/recheck/venv/bin/python -m pytest tests.py -q -p no:cacheprovider",
+      "cwd_rel": ".",
+      "elapsed_s": 2.766,
+      "errors": null,
+      "exit_code": 1,
+      "failed": 1,
+      "passed": 345,
+      "skipped": null,
+      "summary_line": "1 failed, 345 passed, 448 subtests passed in 2.53s",
+      "tail": "E                     ^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/prr-ws2/jsonpatch-274/base/jsonpatch.py\", line 481, in apply\nE               return self._apply(obj, _NO_JOURNAL)\nE                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/prr-ws2/jsonpatch-274/base/jsonpatch.py\", line 588, in _apply\nE               return self._add(obj, value)\nE                      ^^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/prr-ws2/jsonpatch-274/base/jsonpatch.py\", line 592, in _add\nE               subobj, part = self.pointer.to_last(obj)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/recheck/venv/lib/python3.12/site-packages/jsonpointer.py\", line 187, in to_last\nE               doc = self.walk(doc, part)\nE                     ^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/recheck/venv/lib/python3.12/site-packages/jsonpointer.py\", line 348, in walk\nE               raise JsonPointerException(\"member '%s' not found in %s\" % (part, doc))\nE           jsonpointer.JsonPointerException: member 'users' not found in {'foo': 1}\nE       **********************************************************************\nE       1 items had failures:\nE          9 of  88 in tutorial.rst\nE       ***Test Failed*** 9 failures.\n\ntests.py:3725: AssertionError\n=========================== short test summary info ============================\nFAILED tests.py::DocumentationTests::test_tutorial - AssertionError: 9 != 0 :...\n1 failed, 345 passed, 448 subtests passed in 2.53s"
+    },
+    "patched": {
+      "command": "/tmp/recheck/venv/bin/python -m pytest tests.py -q -p no:cacheprovider",
+      "cwd_rel": ".",
+      "elapsed_s": 2.7,
+      "errors": null,
+      "exit_code": 1,
+      "failed": 1,
+      "passed": 345,
+      "skipped": null,
+      "summary_line": "1 failed, 345 passed, 448 subtests passed in 2.44s",
+      "tail": "E                     ^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/prr-ws2/jsonpatch-274/patched/jsonpatch.py\", line 481, in apply\nE               return self._apply(obj, _NO_JOURNAL)\nE                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/prr-ws2/jsonpatch-274/patched/jsonpatch.py\", line 588, in _apply\nE               return self._add(obj, value)\nE                      ^^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/prr-ws2/jsonpatch-274/patched/jsonpatch.py\", line 592, in _add\nE               subobj, part = self.pointer.to_last(obj)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/recheck/venv/lib/python3.12/site-packages/jsonpointer.py\", line 187, in to_last\nE               doc = self.walk(doc, part)\nE                     ^^^^^^^^^^^^^^^^^^^^\nE             File \"/tmp/recheck/venv/lib/python3.12/site-packages/jsonpointer.py\", line 348, in walk\nE               raise JsonPointerException(\"member '%s' not found in %s\" % (part, doc))\nE           jsonpointer.JsonPointerException: member 'users' not found in {'foo': 1}\nE       **********************************************************************\nE       1 items had failures:\nE          9 of  88 in tutorial.rst\nE       ***Test Failed*** 9 failures.\n\ntests.py:3725: AssertionError\n=========================== short test summary info ============================\nFAILED tests.py::DocumentationTests::test_tutorial - AssertionError: 9 != 0 :...\n1 failed, 345 passed, 448 subtests passed in 2.44s"
+    }
+  },
+  "verdict": {
+    "decision": "RETRACT",
+    "gates": [
+      {
+        "detail": "patched tree 9b281368ce95c1c92698694f02bd794a38dc52e0 vs PR head tree 9b281368ce95c1c92698694f02bd794a38dc52e0",
+        "name": "T1-same-tree",
+        "passed": true
+      },
+      {
+        "detail": "baseline 1 failed / 345 passed; patched 1 failed / 345 passed",
+        "name": "T2-upstream-tests",
+        "passed": true
+      },
+      {
+        "detail": "1823 sha256-unique inputs (min 1000), 0 byte-level mismatches",
+        "name": "T3-differential",
+        "passed": true
+      },
+      {
+        "detail": "same-tree median speedup 1.0055 vs declared bar 1.3",
+        "name": "T4-median-speedup",
+        "passed": false
+      },
+      {
+        "detail": "worst scale 0.9967 vs floor 1.0",
+        "name": "T5-worst-case",
+        "passed": false
+      },
+      {
+        "detail": "all scales within RSD 10%",
+        "name": "T6-noise",
+        "passed": true
+      }
+    ],
+    "keep_threshold": 1.3,
+    "median_speedup": 1.0055054861938766,
+    "reasons": [
+      "same-tree median speedup 1.0055x is below the declared 1.3x bar",
+      "worst scale regresses to 0.9967x, below the 1.0x floor"
+    ],
+    "worst_case_floor": 1.0,
+    "worst_speedup": 0.9966593855408269
+  }
+}

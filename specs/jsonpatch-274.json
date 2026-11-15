@@ -1,0 +1,34 @@
+{
+  "name": "jsonpatch-274",
+  "upstream": "stefankoegl/python-json-patch",
+  "pr": 274,
+  "pr_url": "https://github.com/stefankoegl/python-json-patch/pull/274",
+  "claim": {
+    "headline_speedup": 1.33,
+    "reported_range": "1.02x-1.40x",
+    "corpus": "10 real Botocore service-model files (8.43 MB); ec2 model pair 891 KB -> 3.03 MB; 5770 operations",
+    "upstream_tests": "346 passed, 448 subtests passed",
+    "declared_negative": "two nearly identical 3 MB models: 1.02x"
+  },
+  "git_url": "git@github-linluozi:stefankoegl/python-json-patch.git",
+  "base_sha": "cc1229ae0892bdad91b2b81403ebbf2529eec6db",
+  "head_sha": "b1f84c937fd6d783e53b7977edd4fcdd347e1e7c",
+  "head_tree_sha": "9b281368ce95c1c92698694f02bd794a38dc52e0",
+  "patch": "patches/jsonpatch-274.diff",
+  "patch_sha256": "78917205b03eb76db59dd162a20431d2f23cabbb06d17cad9b3e9a8f812123f8",
+  "pythonpath_rel": ".",
+  "workload": "workloads/wl_jsonpatch.py",
+  "scales": ["small", "medium", "large", "near_identical"],
+  "warmups": 3,
+  "samples": 5,
+  "ci_iterations": 2000,
+  "seed": 20261116,
+  "diff_cases": 2000,
+  "diff_min_unique": 1000,
+  "keep_threshold": 1.3,
+  "worst_case_floor": 1.0,
+  "upstream_tests": {
+    "command": ["-m", "pytest", "tests.py", "-q", "-p", "no:cacheprovider"],
+    "cwd_rel": "."
+  }
+}
