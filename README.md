@@ -20,6 +20,12 @@ also **not** an `-opt-lab`: it does not claim a speedup of its own. It contains
 three verbatim third-party PR diffs under `patches/` as the inputs it
 re-measures, and publishes the resulting verdicts as evidence.
 
+**Quick start / 怎么跑:**
+`python3 -m venv .venv && .venv/bin/pip install -e . && .venv/bin/python -m unittest discover -s tests -v`,
+then `python -m prrecheck verify evidence/croniter-298.json` to re-check a
+published verdict offline. Full re-run commands and the raw evidence tables are
+in *Reproduce* and *Results* below.
+
 ## 本轮创新
 
 **B 档：把「已开 PR 的 baseline / patched 是否同树」做成可执行的撤回判据。**
